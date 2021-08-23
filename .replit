@@ -1,0 +1,11 @@
+run = " dotnet run"
+entrypoint = "main.cs"
+
+[env]
+DOTNET_SKIP_FIRST_TIME_EXPERIENCE = "true"
+
+[packager]
+language = "dotnet"
+
+[packager.features]
+packageSearch = true
