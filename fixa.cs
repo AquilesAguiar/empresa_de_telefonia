@@ -4,7 +4,7 @@ class fixa:linha{
 	double valor_restante{get;set;}
 	bool fatura {get;set;}
 
-	public fixa(string nome,int numero,int anoContratacao,double mensalidade,double franquia_minutos).base(nome,numero,anoContratacao){
+	public fixa(string nome,int numero,int anoContratacao,double mensalidade,double franquia_minutos) : base(nome,numero,anoContratacao){
 		this.mensalidade = mensalidade;
 		this.franquia_minutos = franquia_minutos;
 		this.valor_restante = franquia_minutos; 
@@ -25,5 +25,6 @@ class fixa:linha{
 	public string pagarFatura(){
 		this.fatura = false;
 		this.valor_restante = this.franquia_minutos;
+		return "Fatura paga";
 	}
 }

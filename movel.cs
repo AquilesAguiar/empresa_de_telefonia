@@ -1,10 +1,11 @@
+using System;
 class movel:linha{
-	double saldo{get;set;}
-	string mensagem{get;set;}
-	bool planoDados{get;set;}
-	bool sms{get;set;}
-
-	public movel(string nome,int numero,int anoContratacao,double saldo,bool planoDados,bool sms).base(nome,numero,anoContratacao){
+	
+	double _saldo;
+	string _msg;
+	bool _sms,_planoDados;
+	
+	public movel(string nome,int numero,int anoContratacao,double saldo,bool planoDados,bool sms): base(nome,numero,anoContratacao){
 		this.saldo = saldo;
 		this.planoDados = planoDados; 
 		this.sms = sms;
@@ -29,10 +30,13 @@ class movel:linha{
 				if(saldo>= 0.10){
 					saldo-=0.10;
 					linha_msg.mensagem = msg;
-					return $"Mensagem enviada com sucesso para {linha_msg.numero}";
+					return $"Mensagem enviada com sucesso para o numero {linha_msg.numero}";
 				}
 				return "Sem saldo suficiente";
 		}
 		return "Serviço indisponível";
 	}
+
+
+
 }
