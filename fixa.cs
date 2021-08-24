@@ -1,8 +1,8 @@
 class fixa:linha{
-	double mensalidade{get;set}
-	double franquia_minutos{get;set}
-	double valor_restante{get;set}
-	bool fatura {get;set}
+	double mensalidade{get;set;}
+	double franquia_minutos{get;set;}
+	double valor_restante{get;set;}
+	bool fatura {get;set;}
 
 	public fixa(string nome,int numero,int anoContratacao,double mensalidade,double franquia_minutos).base(nome,numero,anoContratacao){
 		this.mensalidade = mensalidade;
