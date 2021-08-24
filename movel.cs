@@ -1,24 +1,43 @@
 using System;
 class movel:linha{
 	
-	double _saldo;
-	string _msg;
-	bool _sms,_planoDados;
+	private double _saldo;
+	private string _msg;
+	private bool _sms,_planoDados;
+
+	public double Saldo{
+		get =>_saldo;
+		set =>_saldo = value;
+	}
+
+	public string Mensagem{
+		get => _msg;
+		set =>_msg = value;
+	}
+	public bool Sms{
+		get =>_sms;
+		set =>_sms = value;
+	}
+	public bool planoDados{
+		get =>_planoDados;
+		set =>_planoDados = value;
+	}
+
 	
 	public movel(string nome,int numero,int anoContratacao,double saldo,bool planoDados,bool sms): base(nome,numero,anoContratacao){
-		this.saldo = saldo;
+		Saldo = saldo;
 		this.planoDados = planoDados; 
-		this.sms = sms;
+		Sms = sms;
 	}
 	public double Recarregar(double valor){
-		saldo += valor;
-		return saldo;
+		Saldo += valor;
+		return Saldo;
 	}
 	public string Navegar(int qtd_mb){
 		if(planoDados == true){
 				double valor_nav = 0.99*qtd_mb;
-				if(saldo>= valor_nav){
-					saldo-=valor_nav;
+				if(Saldo>= valor_nav){
+					Saldo-=valor_nav;
 					return $"Valor para consumido para navegar {valor_nav}";
 				}
 				return "Sem saldo suficiente";
@@ -27,10 +46,10 @@ class movel:linha{
 	}
 	public string enviar_sms(movel linha_msg,string msg){
 		if(planoDados == true){
-				if(saldo>= 0.10){
-					saldo-=0.10;
-					linha_msg.mensagem = msg;
-					return $"Mensagem enviada com sucesso para o numero {linha_msg.numero}";
+				if(Saldo>= 0.10){
+					Saldo-=0.10;
+					linha_msg.Mensagem = msg;
+					return $"Mensagem enviada com sucesso para o numero {linha_msg.Numero}";
 				}
 				return "Sem saldo suficiente";
 		}
