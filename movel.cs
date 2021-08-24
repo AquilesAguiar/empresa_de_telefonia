@@ -1,12 +1,11 @@
 class movel:linha{
-	double saldo{get;set}
-	string mensagem{get;set}
-	bool planoDados{get;set}
-	bool sms{get;set}
+	double saldo{get;set;}
+	string mensagem{get;set;}
+	bool planoDados{get;set;}
+	bool sms{get;set;}
 
-	public movel(string nome,int numero,int anoContratacao,double saldo,string mensagem,bool planoDados,bool sms).base(nome,numero,anoContratacao){
+	public movel(string nome,int numero,int anoContratacao,double saldo,bool planoDados,bool sms).base(nome,numero,anoContratacao){
 		this.saldo = saldo;
-		this.mensagem = mensagem;
 		this.planoDados = planoDados; 
 		this.sms = sms;
 	}
@@ -36,7 +35,4 @@ class movel:linha{
 		}
 		return "Serviço indisponível";
 	}
-
-
-
 }
